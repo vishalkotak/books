@@ -1,5 +1,10 @@
 from abc import ABC, abstractmethod
 
+# The push model below has disadvantages. If the update method has a new measurement such as wind speed
+# all classes with the update method will have to be changed. Also, not all displays might need all
+# measurements. Thus, we implemented the pull model. This will allow individual displays to get the 
+# metrics they need from the subject i.e. WeatherData
+
 class Observer(ABC):
 
     @abstractmethod
