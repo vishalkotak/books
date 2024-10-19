@@ -1,10 +1,13 @@
-* Identify the aspects of your application that vary and separate them from what stays the same.
+* Identify the aspects of your application that vary and separate them from what stays the same
 * Program to an interface, not an implementation 
 * Prefer composition over inheritance (HAS-A over IS-A)
 * Strive for loosly coupled design with objects that interact
+* Classes should be open for extension, closed for modification
 
 Definitions
 * Observer Pattern: This pattern defines one-to-many dependency between objects
 so that when one object changes state all of its dependencies are notified and updated
 automatically.
-
+* Decorator Pattern: This pattern attaches additional responsibilities to an object 
+dynamically. Decorators provide a flexible alternative to subclassing for extending
+functionality.
