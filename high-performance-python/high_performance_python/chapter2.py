@@ -1,10 +1,22 @@
 import time
+from functools import wraps
 
 # area of complex space to investigate
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
 c_real, c_imag = -0.62772, -0.42193
 
 
+def timefn(fn):
+    @wraps(fn)
+    def measure_time(*args, **kwargs):
+        t1 = time.time()
+        result = fn(*args, **kwargs)
+        t2 = time.time()
+        print(f"@timefn: {fn.__name__} took {t2 - t1} seconds")
+        return result
+    return measure_time
+
+@timefn
 def calculate_z_serial_purepython(maxiter, zs, cs):
     output = [0] * len(zs)
     for i in range(len(zs)):
