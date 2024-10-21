@@ -1,6 +1,6 @@
 import time
 from functools import wraps
-from line_profiler import profile
+from memory_profiler import profile
 
 # area of complex space to investigate
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
@@ -17,7 +17,6 @@ def timefn(fn):
         return result
     return measure_time
 
-@timefn
 def calculate_z_serial_purepython(maxiter, zs, cs):
     output = [0] * len(zs)
     for i in range(len(zs)):
