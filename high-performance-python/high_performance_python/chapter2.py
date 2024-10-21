@@ -1,5 +1,6 @@
 import time
 from functools import wraps
+from line_profiler import profile
 
 # area of complex space to investigate
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
@@ -29,6 +30,7 @@ def calculate_z_serial_purepython(maxiter, zs, cs):
         output[i] = n
     return output
 
+@profile
 def calc_pure_python(desired_width, max_iterations):
     x_step = (x2 - x1) / desired_width
     y_step = (y1 - y2) / desired_width
